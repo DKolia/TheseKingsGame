@@ -48,6 +48,12 @@ h1 {
   margin: 0;
 }
 
+.mainGame {
+  width: 60%;
+  min-width: 700px;
+  margin: auto;
+}
+
 /* This adds the bottom footer bar */
 footer {
   padding: 20px;
