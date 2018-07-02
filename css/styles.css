@@ -1,0 +1,11 @@
+#backgroundImage {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0, 0.6)), url("../images/backgrounds/AKTablet.jpg") center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+h1 {
+  color: white;
+  display: inline-block;
+}
