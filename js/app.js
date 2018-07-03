@@ -1,13 +1,9 @@
 // To do:
-// 1. Make randomizer that draws 3 kings
-// 2. Make questions out of those 3 kings
-// 3. Pull first 5 questions from that array
-// 4. Make quiz
-// 5. Make jQuery push things
-// 6. Make end game script
-
+// 1. Make questions out of those 3 kings
+// 2. Pull first 5 questions from that array
+// 3. Make quiz
+// 4. Make jQuery push things
 console.log("JS is working");
-
 
 //  This reaches into an array, displays a random background, applies styling, and runs on read of JS file
 function backgroundImages() {
@@ -20,13 +16,16 @@ function backgroundImages() {
 backgroundImages()
 
 
-//  This is working
+//  Starts the game and runs below functions to set things up
 function gameStart() {
   userScore = 0
   roundNumber = 1
   console.log("Starting the game!");
   console.log("The current score is " + userScore);
   console.log("The current round is " + roundNumber);
+  drawKings()
+  revealKings()
+  runCardsInPlay()
 }
 
 //  Checks if user scored a point or not, advances round
@@ -36,7 +35,7 @@ function checkScore() {
   console.log("Current score: " + userScore);
   roundNumber++
   if (roundNumber < 6 ) {
-  console.log("Now beginning round " + roundNumber + ".");
+    console.log("Now beginning round " + roundNumber + ".");
   }
   gameEnd();
 }
@@ -44,15 +43,16 @@ function checkScore() {
 //  Checks if user has completed 5 rounds, if they have won the game, or needs to try again
 function gameEnd() {
   if (roundNumber === 6) {
-    if (userScore === 4.5 || userScore === 5) {
-      console.log("You've Won! (Game over)");
-      console.log("Final score: " + userScore + ".");
+    if (userScore === 5) {
+      console.log("You've won These Kings with a perfect score of: 5 out of 5!");
     } else {
-      console.log("Try again... (Game over)");
-      console.log("Final score: " + userScore + ".");
+      console.log("You've answered " + userScore + " out of 5 questions correctly. Try again!");
     }
   }
 }
+
+
+
 
 //  This randomly chooses 1-4 with no duplicates and logs numbers
 function drawKings() {
@@ -104,13 +104,47 @@ function drawKingC() {
   // console.log(drawnKingC);
 }
 
-
 function revealKings() {
   drawKingA();
   drawKingB();
   drawKingC();
   console.log("The Kings in play are: " + drawnKingA.name + ", " + drawnKingB.name + ", " + drawnKingC.name + ".");
 }
+
+// function populateQuestions() {
+//   drawnKingA.questions pushed to questionsInPlay
+//   drawnKingB.questions pushed to questionsInPlay
+//   drawnKingC.questions pushed to questionsInPlay
+// }
+
+function runCardsInPlay() {
+  console.log(drawnKingA.questions);
+  console.log(drawnKingB.questions);
+  console.log(drawnKingC.questions);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -195,11 +229,6 @@ const king4 = {
 
 
 
-// class King = {
-  // this.questions = questions
-  // this.name =
-  // this.era =
-  // this.askedQuestions = []
 
   // getRandomQuestion() {
   //   // get a random q from this.questions
@@ -207,18 +236,6 @@ const king4 = {
   //    // return that question
   // }
 // }
-// const k = new King("ash", "neo-assyrian", [
-//   "asdfasdfasdf",
-//   "asdfasdfasdfasdf",
-// ])
-
-
-//  These are the 4 available Kings
-// kings = [king1, king2, king3, king4];
-// kingsInPlay = [math.random integer 1-4, math.random integer 1-4, math.random integer 1-4, math.random integer 1-4,]
-//
-// questions = [king1.questions, king2.questions, king3.questions, king4.questions]
-// questionsInPlay = [kingsInPlay[0], kingsInPlay[1], kingsInPlay[2]]
 
 
 
@@ -272,13 +289,3 @@ const king4 = {
 //    manip data and call askQuestion()
 //   }
 // }
-
-
-
-
-
- // Prompt "You've worn!"
- // Add jQuery retry button
- // Else,
- // Prompt, "You came close, but need at least 4.5 out of 5 to win"
- // Add jQuery retry button
