@@ -25,7 +25,7 @@ function gameStart() {
   console.log("The current round is " + roundNumber);
   drawKings()
   revealKings()
-  runCardsInPlay()
+  drawQsInPlay()
 }
 
 //  Checks if user scored a point or not, advances round
@@ -104,29 +104,48 @@ function drawKingC() {
   // console.log(drawnKingC);
 }
 
+//  This reveals the Kings to the player
 function revealKings() {
   drawKingA();
   drawKingB();
   drawKingC();
   console.log("The Kings in play are: " + drawnKingA.name + ", " + drawnKingB.name + ", " + drawnKingC.name + ".");
+  console.log("The Questions in play are: " + drawnKingA.questions + ", " + drawnKingB.questions + ", " + drawnKingC.questions + ".");
 }
 
-// function populateQuestions() {
-//   drawnKingA.questions pushed to questionsInPlay
-//   drawnKingB.questions pushed to questionsInPlay
-//   drawnKingC.questions pushed to questionsInPlay
-// }
-
-function runCardsInPlay() {
-  console.log(drawnKingA.questions);
-  console.log(drawnKingB.questions);
-  console.log(drawnKingC.questions);
+//  This draws the questions from the Kings and puts them into a new array
+let qsInPlay = [];
+function drawQsInPlay() {
+  for (let i = 1; i <= 0; i++) {
+      drawnKingA.questions.push(i);
+      qsInPlay.push(drawnKingA.questions.slice(0));
+  }
+  for (let i = 1; i <= 1; i++) {
+      drawnKingB.questions.push(i);
+      qsInPlay.push(drawnKingB.questions.slice(0));
+  }
+  for (let i = 1; i <= 1; i++) {
+      drawnKingC.questions.push(i);
+      qsInPlay.push(drawnKingC.questions.slice(0));
+  }
+  qsInPlay = qsInPlay[0].concat(qsInPlay[1],(qsInPlay[2]));
+  shuffle(qsInPlay);
+  console.log(qsInPlay);
 }
 
 
-
-
-
+//  This randomizes the arrays while there are items in the array to do so.
+function shuffle(qsInPlay) {
+  var currentIndex = qsInPlay.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = qsInPlay[currentIndex];
+    qsInPlay[currentIndex] = qsInPlay[randomIndex];
+    qsInPlay[randomIndex] = temporaryValue;
+  }
+  // return qsInPlay;
+}
 
 
 
@@ -153,25 +172,25 @@ const king1 = {
   name: "Ashurnasirpal II",
   era: "Neo-Assyrian Era",
   number: 1,
-  questions: ["1","2","3","4","5","6","7"]
+  questions: ["This is Question 1","This is Question 2","This is Question 3","This is Question 4","This is Question 5","This is Question 6","This is Question 7"]
 }
 const king2 = {
   name: "Tiglath-Pileser III",
   era: "Neo-Assyrian Era",
   number: 2,
-  questions: ["8","9","10","11","12","13","14"]
+  questions: ["This is Question 8","This is Question 9","This is Question 10","This is Question 11","This is Question 12","This is Question 13","This is Question 14"]
 }
 const king3 = {
   name: "Sargon II",
   era: "Neo-Assyrian Era",
   number: 3,
-  questions: ["15","16","17","18","19","20","21"]
+  questions: ["This is Question 15","This is Question 16","This is Question 17","This is Question 18","This is Question 19","This is Question 20","This is Question 21"]
 }
 const king4 = {
   name: "Ashurbanipal",
   era: "Neo-Assyrian Era",
   number: 4,
-  questions: ["22","23","24","25","26","27","28"]
+  questions: ["This is Question 22","This is Question 23","This is Question 24","This is Question 25","This is Question 26","This is Question 27","This is Question 28"]
 }
 
 
