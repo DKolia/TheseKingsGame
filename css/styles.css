@@ -1,4 +1,4 @@
-/* This sets up the background image, transparency, and centers */
+/* This sets up the background image, transparency, and centers. JS randomly loads an image, but keeping this in case JS is disabled or stops working*/
 #backgroundImage {
   background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0, 0.4)), url("../images/backgrounds/Background2.jpg"), center center no-repeat;
   background-size: cover;
@@ -6,11 +6,6 @@
   padding: 0;
 }
 
-/* Added some fade animations to certain elements */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
 
 /* Sets Navbar to 100%, colors black. Padding from A tags define height */
 nav {
@@ -40,30 +35,33 @@ nav a.active {
   text-decoration: underline;
 }
 
-
-.iconLamassu {
-  max-width: 55px;
-  max-height: 55px;
-  transform: scale(-1, 1);
-  padding: 10px;
-  margin-right: auto;
+nav .aImages {
+  padding: 15px;
 }
 
-/* These icons are black, but invert flips them to be white */
+
+/* icon styles */
 .iconDeactivated {
-  max-width: 55px;
-  max-height: 55px;
+  width: 55px;
+  height: 55px;
   padding: 10px;
   filter: invert(40%);
-  margin-right: auto;
+
+
 }
 .iconActivated {
-  max-width: 55px;
-  max-height: 55px;
+  width: 55px;
+  height: 55px;
   padding: 10px;
-  filter: invert(100%);
-  margin-left: auto;
+  transform: scale(-1, 1);
+
 }
+
+.lastIcon {
+  margin-right: auto;
+}
+
+
 
 /* This targets H1 and P tags, centers, and colors in white. Standard bootstrap fonts for now */
 h1, p {
@@ -73,8 +71,13 @@ h1, p {
   width: 100%;
 }
 
+p {
+  font-size: 1.4em;
+  line-height: 1.8em;
+}
+
 h1 {
-  font-size: 5em;
+  font-size: 6em;
   padding: 50px;
   margin: 0;
 }
@@ -83,10 +86,6 @@ h1 {
   width: 60%;
   min-width: 700px;
   margin: auto;
-  -webkit-animation: fadein 2s;
-  -moz-animation: fadein 2s;
-  -ms-animation: fadein 2s;
-  -o-animation: fadein 2s;
   animation: fadein 2s;
 }
 
@@ -116,22 +115,6 @@ footer {
 
 /* Animations for loading content with support for almost all browsers */
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-@-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
