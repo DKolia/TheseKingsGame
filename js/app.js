@@ -1,7 +1,7 @@
 console.log("JS is working");
 
 
-// This reaches into an array and displays a random background, then applies styling
+//  This reaches into an array and displays a random background, then applies styling
 function backgroundImages() {
   const images = ["Background1.jpg", "Background2.jpg", "Background3.jpg", "Background4.jpg", "Background5.jpg", "Background6.jpg",];
   $('#backgroundImage').css({
@@ -9,7 +9,7 @@ function backgroundImages() {
     "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0, 0.4))" + "," + "url(images/backgrounds/" + images[Math.floor(Math.random() * images.length)] + ")"
   });
 }
-
+//  Runs the above on launch of JS file
 backgroundImages()
 
 

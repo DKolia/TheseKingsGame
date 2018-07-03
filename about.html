@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="About These Kings">
+    <meta name="description" content="These Kings, the Assyrian history trivia game">
     <!-- Link to Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- Link to local stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
     <title>These Kings: About</title>
   </head>
 
 
   <body>
-    <div class="container">
-    <header>
-      <h1>About</h1>
-    </header>
-
-    <nav>
-      <ul>
-        <li><a class="index" href="index.html">Home</a></li>
-        <li><a class="rules" href="rules.html">Rules</a></li>
-        <li><a class="about" href="about.html">About</a></li>
-        <li><a class="sources" href="sources.html">Sources</a></li>
-        <li><a class="contact" href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container-fluid" id="backgroundImage">
+      <header>
+        <nav>
+          <!-- These are the icons and text links -->
+          <ul>
+            <a title="Ancient Era; coming soon." class="aImages"><img class="iconDeactivated" src="images/svgs/monument.svg"></img></a>
+            <a title="Middle Era; coming soon." class="aImages"><img class="iconDeactivated" src="images/svgs/arch.svg"></img></a>
+            <a title="Neo-Assyrian Era; these Kings are in play." class="aImages lastIcon"><img class="iconActivated" src="images/svgs/lamassu.svg"></img></a>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="rules.html">Rules</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="sources.html">Sources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
 
     <p>My name is David Kolia and I am a full-stack developer, photographer, and am an Assyrian myself. My parents immigrated to the US in the late 70s due to political and religious persecution that was common against minorities in that time and place. Having grown up in the United States during the 90s, I was immersed in American culture, but I never forgot my heritage. I speak Assyrian, brew tea like my parents did back home, and enjoy learning and sharing more about my people and history.</p>
 
     <p>In building this game I hope to not only test people's historical prowess, but also raise awareness of who the Assyrians are, where they currently live, and what struggles these often forgotten people have to live through.</p>
-    </div> <!-- End of Container -->
 
-  <!-- JS Required for Bootstrap -->
+
+    <footer>
+      <p class="footerText">Created by <i><a class="footerText" href="http:www.davidkolia.com">David Kolia</a></i>, 2018.</p>
+    </footer>
+
+
+  </div> <!-- End of container -->
+
+
+  <!-- JS required for Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <!-- My local JS file -->
+  <script src="js/app.js"></script>
   </body>
+
 </html>
