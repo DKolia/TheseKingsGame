@@ -1,7 +1,6 @@
 console.log("JS is working");
 
-
-//  This reaches into an array and displays a random background, then applies styling
+//  This reaches into an array, displays a random background, applies styling, and runs on read of JS file
 function backgroundImages() {
   const images = ["Background1.jpg", "Background2.jpg", "Background3.jpg", "Background4.jpg", "Background5.jpg", "Background6.jpg",];
   $('#backgroundImage').css({
@@ -9,31 +8,54 @@ function backgroundImages() {
     "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0, 0.4))" + "," + "url(images/backgrounds/" + images[Math.floor(Math.random() * images.length)] + ")"
   });
 }
-//  Runs the above on launch of JS file
 backgroundImages()
 
+//  This is working
+function gameStart() {
+  userScore = 0
+  roundNumber = 1
+  console.log("Starting the game!");
+  console.log("The current score is " + userScore);
+  console.log("The current round is " + roundNumber);
+}
+
+//  This randomly chooses 1-4 with no duplicates and logs
+function drawKings() {
+  drawnKingA = Math.floor(Math.random() * 4) + 1;
+  drawnKingB = Math.floor(Math.random() * 4) + 1;
+  drawnKingC = Math.floor(Math.random() * 4) + 1;
+  if (drawnKingA !== drawnKingB && drawnKingA !== drawnKingC && drawnKingB !== drawnKingC) {
+    console.log(drawnKingA + " " + drawnKingB + " " + drawnKingC);
+  } else {
+    drawKings()
+  }
+}
 
 
 
 
 
-//  Start button
-//  jQuery removes basic homepage elements
-//  jQuery adds questionSlot
-//  jQuery adds three random kings art, names, and answer buttons
-//  Loads first question from array
-//  Loads first answer value from question
-//  Sets score = 0;
-//  jQuery score to user
 
-//  Game question array = []
-//  Game checks kingValue of button1
-//  Game checks kingValue of button2
-//  Game checks kingValue of button3
-//  Game pushes questions to array.
-//  If button.kingValue === GameQuestionValue, return true
-//  else return false
-//  if true, run score function
+
+
+
+ // Start button
+ // jQuery removes basic homepage elements
+ // jQuery adds questionSlot
+ // jQuery adds three random kings art, names, and answer buttons
+ // Loads first question from array
+ // Loads first answer value from question
+ // Sets score = 0;
+ // jQuery score to user
+ //
+ // Game question array = []
+ // Game checks kingValue of button1
+ // Game checks kingValue of button2
+ // Game checks kingValue of button3
+ // Game pushes questions to array.
+ // If button.kingValue === GameQuestionValue, return true
+ // else return false
+ // if true, run score function
 
 
 
@@ -87,36 +109,33 @@ backgroundImages()
 // questionsInPlay = [kingsInPlay[0], kingsInPlay[1], kingsInPlay[2]]
 
 
-
 // const king1 = {
 //   name: "Ashurnasirpal II",
 //   era: "Neo-Assyrian Era",
 //   number: 1,
-//   // img: x,
 //   questions: ["1","2","3","4","5","6","7"]
 // }
 //
-// const king2
-//   king2.name = "Tiglath-Pileser III";
-//   king2.era = "Neo-Assyrian Era";
-//   king2.number = 2;
-//   // king2.img =
-//   king2.questions = ["8","9","10","11","12","13","14"];
+// const king2 = {
+//   name: "Tiglath-Pileser III",
+//   era: "Neo-Assyrian Era",
+//   number: 2,
+//   questions: ["8","9","10","11","12","13","14"]
+// }
 //
-// const king3
-//   king3.name = "Sargon II";
-//   king3.era = "Neo-Assyrian Era";
-//   king3.number = 3;
-//   // king3.img =
-//   king3.questions = ["15","16","17","18","19","20","21"];
+// const king3 = {
+//   name: "Sargon II",
+//   era: "Neo-Assyrian Era",
+//   number: 3,
+//   questions: ["15","16","17","18","19","20","21"]
+// }
 //
-// const king4
+// const king4 = {
 //   king4.name = "Ashurbanipal";
 //   king4.era = "Neo-Assyrian Era";
 //   king4.number = 4;
-//   // king4.img:
 //   king4.questions = ["22","23","24","25","26","27","28"];
-
+// }
 
 //  Score Structure Function
 //  checkScore()
@@ -125,12 +144,7 @@ backgroundImages()
 //  load next question
 
 
-// //  Starts the game, establishes rounds, will be tied to button soon...
-// function gameStart() {
-//   userScore = 0
-//   roundNumber = 1
-//   console.log("Starting the game!");
-// }
+
 //
 // //  Checks if user scored a point or not, advances round
 // function checkScore() {
@@ -161,10 +175,22 @@ backgroundImages()
 
 
 // const game = {
+//   //  Starts the game, establishes rounds, will be tied to button soon...
+//   function gameStart {
+//     userScore = 0
+//     roundNumber = 1
+//     console.log("Starting the game!");
+//     console.log("The current score is " + userScore);
+//     console.log("The current round is " + roundNumber);
+//   }
+
+
+
+
+
 //   properties
 //    which king currently showing
-//    userScore
-//    cuurentRound
+//
 //   askQuestion() {
 //     choose a random king from the 3
 //     choose a random question about that king
