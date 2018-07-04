@@ -70,7 +70,7 @@ const game = {
     console.log("Starting the game!");
     console.log("The current score is " + userScore);
     console.log("The current round is " + roundNumber);
-  }
+  },
 
   // This is a function that determines 3 of 4 random, unique kings for play
   randKings() {
@@ -82,7 +82,7 @@ const game = {
         game.kingsInPlay.push(this.kings[randIndex]);   // This pushes the king associated with the random index into the kingsInPlay array
       }
     }
-  }
+  },
 
   // Need to randomly draw a question
   getRandQuestion() {
@@ -91,7 +91,7 @@ const game = {
     console.log(this.kingsInPlay[randIndex]);
     const questionIndex = Math.floor(Math.random() * 8);  // This randomly chooses a random kingsInPlay question index
     console.log(game.kingsInPlay[randIndex].questions[questionIndex]);
-  }
+  },
 
   //  Checks if user scored a point or not, advances round
   checkScore() {
@@ -126,7 +126,7 @@ const game = {
   // },
   // checkUserChoice() {
   // }
-}
+
 
 
 
