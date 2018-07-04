@@ -62,6 +62,7 @@ const game = {  // Sets up the game including base variables, functions
   kings: [k1, k2, k3, k4],
   kingsInPlay: [],
   questionsInPlay: [],
+  answersInPlay: [],
 
   //  Starts the game and runs below functions to set things up
   gameStart() {
@@ -79,7 +80,7 @@ const game = {  // Sets up the game including base variables, functions
     for (let i = 0; game.kingsInPlay.length < 3; i++) {   //  This loop determines random integers for index locations
       const randIndex = Math.floor(Math.random() * 4);
       if (game.kingsInPlay.includes(game.kings[randIndex])) {   // This determines whether or not the random integers are unqiue or not
-          // Do nothing in this for loop
+          // Do nothing in this for loopz
       } else {
         game.kingsInPlay.push(game.kings[randIndex]);   // This pushes the king associated with the random index into the kingsInPlay array
       }
@@ -93,13 +94,16 @@ const game = {  // Sets up the game including base variables, functions
       const randIndex = Math.floor(Math.random() * 3);  // This chooses a random king from array kingsInPlay
       const questionIndex = Math.floor(Math.random() * 7);  // This randomly chooses a random kingsInPlay question index
       game.questionsInPlay.push(game.kingsInPlay[randIndex].questions[questionIndex]); // This pushes the randomly chosen question into questionsInPlay array
+      game.answersInPlay.push(randIndex);   // This pushes the corresponding answers to the randomly drawn questions to answersInPlay
+
       // if (game.questionsInPlay.includes(game.kingsInPlay[randIndex].questions[questionIndex]) {
       //   // Do nothing
       // } else {
-      // console.log(game.kingsInPlay[randIndex].questions[questionIndex]);
 
     }
     console.log(game.questionsInPlay);
+    console.log(game.questionsInPlay[0]);
+    console.log(game.answersInPlay);
   },
 
 
@@ -126,3 +130,7 @@ const game = {  // Sets up the game including base variables, functions
     }
   }
 }
+
+
+// if question is from KX === KX from answer-  give points
+// else- no points, advance round.
