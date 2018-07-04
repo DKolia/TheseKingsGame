@@ -1,5 +1,4 @@
 console.log("JS is working");
-
 //  This reaches into an array, displays a random background, applies styling, and runs on read of JS file
 function backgroundImages() {
   const images = ["Background1.jpg", "Background2.jpg", "Background3.jpg", "Background4.jpg", "Background5.jpg", "Background6.jpg",];
@@ -22,43 +21,43 @@ class king {
 }
 // These are the Kings, instantiated
 const k1 = new king("Ashurnasirpal II", "Neo-Assyrian Era", 1, [
-  "Q1",
-  "Q2",
-  "Q3",
-  "Q4",
-  "Q5",
-  "Q6",
-  "Q7",
+  "Which of These Kings reigned from 884-859 BCE?",
+  "Which of These Kings was hosted over 60,000 guests for a ten day festival?",
+  "Which of These Kings was succeeded by his son, Shalmaneser III?",
+  "Which of These Kings renovated Ashur, the capital at that time?",
+  "Which of These Kings was known for his ruthlessness displays in conquered cities- preventing further rebellions?",
+  "Which of These Kings rebuilt the city of Caleh, including a new Grand Palace?",
+  "Which of These Kings founded the new city of Khalu and made it the capital?",
 ]);
 const k2 = new king("Tiglath-Pileser III", "Neo-Assyrian Era", 2, [
-  "Q8",
-  "Q9",
-  "Q10",
-  "Q11",
-  "Q12",
-  "Q13",
-  "Q14",
+  "Which of These Kings took their place on the throne in a palace coup?",
+  "Which of These Kings had been born with the birthname of 'Pulu' or 'Paul'?",
+  "Which of These Kings was at one time the provincial governer of Khalu?",
+  "Which of These Kings deposed the then royal family and Ashur Nirari V?",
+  "Which of These Kings drastically reduced the power of provincial leaders to prevent an uprising?",
+  "Which of These Kings created the first truly professional(not only consisting of farmers or conscripts) army in history?",
+  "Which of These Kings used a predecessor's policy of deportation to a new, grand scale to control the populace?",
 ]);
 const k3 = new king("Sargon II", "Neo-Assyrian Era", 3, [
-  "Q15",
-  "Q16",
-  "Q17",
-  "Q18",
-  "Q19",
-  "Q20",
-  "Q21",
+  "Which of These Kings was the founder of a dynasty that bore their name?",
+  "Which of These Kings defeated the Babalonians in 718 BCE?",
+  "Which of These Kings announced the construction of (and then named as the new capital) Dur-Sharrukin",
+  "Which of These Kings launched a brief, successful military campaign against the Kingdom of Urartu?",
+  "Which of These Kings personally lead his army in unfamiliar mountain warefare?",
+  "Which of These Kings ruled Assyria at its peak wealth, strength, and size?",
+  "Which of These Kings died in battle and were unable to have their body recovered?",
 ]);
 const k4 = new king("Ashurbanipal", "Neo-Assyrian Era", 4, [
-  "Q15",
-  "Q16",
-  "Q17",
-  "Q18",
-  "Q19",
-  "Q20",
-  "Q21",
+  "Which of These Kings was considered the last great King of Assyria?",
+  "Which of These Kings's name translated roughly to 'God is the creator of an heir?'",
+  "Which of These Kings expanded the Assyrian Empire to include Babalonia, Persia, Syria, and Egypt?",
+  "Which of These Kings's death lead the Assyrian Empire to fall apart?",
+  "Which of These Kings is known for their massive library they built in Nineveh?",
+  "Which of These Kings is known to have multiple reliefs of them hunting a lion?",
+  "Which of These Kings was able to read and write cuneiform tablets, often signing their own name?",
 ]);
 
-const game = {
+const game = {  // Sets up the game including base variables, functions
   currentKing: null,
   kings: [k1, k2, k3, k4],
   kingsInPlay: [],
@@ -113,7 +112,7 @@ const game = {
     if (roundNumber < 6 ) {
       console.log("Now beginning round " + roundNumber + ".");
     }
-    gameEnd();
+    game.gameEnd();
   },
 
   //  Checks if user has completed 5 rounds, if they have won the game, or needs to try again
@@ -127,58 +126,3 @@ const game = {
     }
   }
 }
-
-
-
-
-
-
-      // set up the listener references -- put the correct kings on the page (you can add an id like "0" with jQuery)
-
-
-
-  // getQuestionAndAnswer() {
-
-
-  //   // choose random king  rn bt 0 - 2 -- set current above -- so that you can check if the answer is correcrt -- this will change each time
-  //
-  //   // choose a random question from that king's array (using the getRandomQuestion method of the King class and print it
-  //   // const q to show = whateverKingYouChoseAbove.getRandomQuestion()
-  //   // jq qToShow onto the screen
-  // },
-  // checkUserChoice() {
-  // }
-
-
-
-
-
-
-//  Checks if user scored a point or not, advances round
-function checkScore() {
-  userScore++
-  console.log("Congrats! They are the correct King.");
-  console.log("Current score: " + userScore);
-  roundNumber++
-  if (roundNumber < 6 ) {
-    console.log("Now beginning round " + roundNumber + ".");
-  }
-  gameEnd();
-}
-
-
-
-
-
-
-
-
-
-
-//  To Do //////////////////////////////////////////////////////////////////////
-//  Set up Start Game function
-//  Set up Check Score function
-//  Set up Game End function
-//  Log Kings and Questions
-//  Set Up Round Counter
-//  Set Up Score Counter
