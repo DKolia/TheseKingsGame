@@ -11,7 +11,6 @@ function backgroundImages() {
 backgroundImages()
 
 
-
 //  Establishes Kings and their stats
 class king {
   constructor(name, era, number, questions){
@@ -64,42 +63,60 @@ const game = {
   kings: [k1, k2, k3, k4],
   kingsInPlay: [],
 
+  //  Starts the game and runs below functions to set things up
+  gameStart() {
+    userScore = 0
+    roundNumber = 1
+    console.log("Starting the game!");
+    console.log("The current score is " + userScore);
+    console.log("The current round is " + roundNumber);
+  }
 
-// This is a function that determines 3 of 4 random, unique kings for play
+  // This is a function that determines 3 of 4 random, unique kings for play
   randKings() {
-    for (let i = 0; this.kingsInPlay.length < 3; i++) {   //  This loop determines random integers for index locations
+    for (let i = 0; game.kingsInPlay.length < 3; i++) {   //  This loop determines random integers for index locations
       const randIndex = Math.floor(Math.random() * 4);
-      if (this.kingsInPlay.includes(this.kings[randIndex])) {   // This determines whether or not the random integers are unqiue or not
+      if (game.kingsInPlay.includes(game.kings[randIndex])) {   // This determines whether or not the random integers are unqiue or not
           // Do nothing in this for loop
       } else {
         game.kingsInPlay.push(this.kings[randIndex]);   // This pushes the king associated with the random index into the kingsInPlay array
       }
     }
-  },
+  }
 
   // Need to randomly draw a question
   getRandQuestion() {
-    const randIndex = Math.floor(Math.random() * 3);
+    const randIndex = Math.floor(Math.random() * 3);  // This chooses a random king from array kingsInPlay
     console.log(randIndex);
     console.log(this.kingsInPlay[randIndex]);
-    const questionIndex = Math.floor(Math.random() * 8);
+    const questionIndex = Math.floor(Math.random() * 8);  // This randomly chooses a random kingsInPlay question index
     console.log(game.kingsInPlay[randIndex].questions[questionIndex]);
   }
 
-  // get random index number > kingsInPlay
-  // get random question number > kingsInPlay.question
-  // print it
+  //  Checks if user scored a point or not, advances round
+  checkScore() {
+    userScore++
+    console.log("Congrats! They are the correct King.");
+    console.log("Current score: " + userScore);
+    roundNumber++
+    if (roundNumber < 6 ) {
+      console.log("Now beginning round " + roundNumber + ".");
+    }
+    gameEnd();
+  }
+}
+
 
 
 
 
 
       // set up the listener references -- put the correct kings on the page (you can add an id like "0" with jQuery)
-      // What?...
+
 
 
   // getQuestionAndAnswer() {
-  // HOW?....
+
 
   //   // choose random king  rn bt 0 - 2 -- set current above -- so that you can check if the answer is correcrt -- this will change each time
   //
@@ -110,20 +127,10 @@ const game = {
   // checkUserChoice() {
   // }
 }
-game.randKings()
 
 
-//  Starts the game and runs below functions to set things up
-function gameStart() {
-  userScore = 0
-  roundNumber = 1
-  console.log("Starting the game!");
-  console.log("The current score is " + userScore);
-  console.log("The current round is " + roundNumber);
-  drawKings()
-  revealKings()
-  drawQsInPlay()
-}
+
+
 
 //  Checks if user scored a point or not, advances round
 function checkScore() {
