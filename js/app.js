@@ -62,6 +62,7 @@ const game = {
   currentKing: null,
   kings: [k1, k2, k3, k4],
   kingsInPlay: [],
+  questionsInPlay: [],
 
   //  Starts the game and runs below functions to set things up
   gameStart() {
@@ -70,6 +71,8 @@ const game = {
     console.log("Starting the game!");
     console.log("The current score is " + userScore);
     console.log("The current round is " + roundNumber);
+    game.randKings();
+    game.randQuestions();
   },
 
   // This is a function that determines 3 of 4 random, unique kings for play
@@ -79,19 +82,27 @@ const game = {
       if (game.kingsInPlay.includes(game.kings[randIndex])) {   // This determines whether or not the random integers are unqiue or not
           // Do nothing in this for loop
       } else {
-        game.kingsInPlay.push(this.kings[randIndex]);   // This pushes the king associated with the random index into the kingsInPlay array
+        game.kingsInPlay.push(game.kings[randIndex]);   // This pushes the king associated with the random index into the kingsInPlay array
       }
     }
+    console.log(game.kingsInPlay[0].name + ", " + game.kingsInPlay[1].name + ", " + game.kingsInPlay[2].name);  // Logs the names of the three Kings chosen
   },
 
-  // Need to randomly draw a question
-  getRandQuestion() {
-    const randIndex = Math.floor(Math.random() * 3);  // This chooses a random king from array kingsInPlay
-    console.log(randIndex);
-    console.log(this.kingsInPlay[randIndex]);
-    const questionIndex = Math.floor(Math.random() * 8);  // This randomly chooses a random kingsInPlay question index
-    console.log(game.kingsInPlay[randIndex].questions[questionIndex]);
+  // Pushes a randomly selected king's question into new array.
+  randQuestions() {
+    for (let i = 0; i < 5; i++) {  // Makes this function run 5 times
+      const randIndex = Math.floor(Math.random() * 3);  // This chooses a random king from array kingsInPlay
+      const questionIndex = Math.floor(Math.random() * 7);  // This randomly chooses a random kingsInPlay question index
+      game.questionsInPlay.push(game.kingsInPlay[randIndex].questions[questionIndex]); // This pushes the randomly chosen question into questionsInPlay array
+      // if (game.questionsInPlay.includes(game.kingsInPlay[randIndex].questions[questionIndex]) {
+      //   // Do nothing
+      // } else {
+      // console.log(game.kingsInPlay[randIndex].questions[questionIndex]);
+
+    }
+    console.log(game.questionsInPlay);
   },
+
 
   //  Checks if user scored a point or not, advances round
   checkScore() {
@@ -103,6 +114,17 @@ const game = {
       console.log("Now beginning round " + roundNumber + ".");
     }
     gameEnd();
+  },
+
+  //  Checks if user has completed 5 rounds, if they have won the game, or needs to try again
+  gameEnd() {
+    if (roundNumber === 6) {
+      if (userScore === 5) {
+        console.log("You've won These Kings with a perfect score of: 5 out of 5!");
+      } else {
+        console.log("You've answered " + userScore + " out of 5 questions correctly. Try again with a new set of These Kings and questions.");
+      }
+    }
   }
 }
 
@@ -144,16 +166,6 @@ function checkScore() {
   gameEnd();
 }
 
-//  Checks if user has completed 5 rounds, if they have won the game, or needs to try again
-function gameEnd() {
-  if (roundNumber === 6) {
-    if (userScore === 5) {
-      console.log("You've won These Kings with a perfect score of: 5 out of 5!");
-    } else {
-      console.log("You've answered " + userScore + " out of 5 questions correctly. Try again with a new set of These Kings and questions.");
-    }
-  }
-}
 
 
 
