@@ -89,6 +89,10 @@ h1 {
   animation: fadein 2s;
 }
 
+.hidden {
+  display: none;
+}
+
 
 /* This adds the bottom footer bar */
 footer {

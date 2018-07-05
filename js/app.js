@@ -86,6 +86,7 @@ const game = {  // Sets up the game including base variables, functions
       }
     }
     console.log(game.kingsInPlay[0].name + ", " + game.kingsInPlay[1].name + ", " + game.kingsInPlay[2].name);  // Logs the names of the three Kings chosen
+    // Somehow I need to push kingsInPlay[Array#] to the buttons here
   },
 
   // Pushes a randomly selected king's question into new array.
@@ -105,7 +106,6 @@ const game = {  // Sets up the game including base variables, functions
     console.log(game.questionsInPlay[0]);
     console.log(game.answersInPlay);
   },
-
 
   //  Checks if user scored a point or not, advances round
   checkScore() {
@@ -131,21 +131,30 @@ const game = {  // Sets up the game including base variables, functions
   }
 }
 
-
-$("#button1").click(function ()
+//  This start button disappears and makes answer buttons appear when clicked
+$("#startButton").click(function ()
 {
-    console.log("Button 1 is clicked");
+  $("button").removeClass("hidden");
+  $("#startButton").addClass("hidden");
+
+  $("#button1").click(function ()
+  {
+
+      console.log("Button 1 is clicked");
+  });
+
+  $("#button2").click(function ()
+  {
+      console.log("Button 2 is clicked");
+  });
+
+  $("#button3").click(function ()
+  {
+      console.log("Button 3 is clicked");
+  });
 });
 
-$("#button2").click(function ()
-{
-    console.log("Button 2 is clicked");
-});
 
-$("#button3").click(function ()
-{
-    console.log("Button 3 is clicked");
-});
 
 // if question is from KX === KX from answer-  give points
 // else- no points, advance round.
