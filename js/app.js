@@ -134,7 +134,10 @@ const game = {  // Sets up the game including base variables, functions
 
   //  Checks if user has completed 5 rounds, if they have won the game, or needs to try again
   gameEnd() {
+
     if (roundNumber === 6) {
+      $("#roundDigit").empty();
+      $("#scoreDigit").empty();
       if (userScore === 5) {
         console.log("You've won These Kings with a perfect score of: 5 out of 5!");
       } else {
