@@ -63,6 +63,7 @@ const game = {  // Sets up the game including base variables, functions
   kingsInPlay: [],
   questionsInPlay: [],
   answersInPlay: [],
+  buttonAnswers: [],
 
   //  Starts the game and runs below functions to set things up
   gameStart() {
@@ -83,10 +84,11 @@ const game = {  // Sets up the game including base variables, functions
           // Do nothing in this for loopz
       } else {
         game.kingsInPlay.push(game.kings[randIndex]);   // This pushes the king associated with the random index into the kingsInPlay array
+        // game.buttonAnswers.push(game.kings[randIndex]);
+        game.buttonAnswers.push(this.randIndex);   // This pushes the king's index from kingsInPlay array to separate answer array
       }
     }
     console.log(game.kingsInPlay[0].name + ", " + game.kingsInPlay[1].name + ", " + game.kingsInPlay[2].name);  // Logs the names of the three Kings chosen
-    // Somehow I need to push kingsInPlay[Array#] to the buttons here
   },
 
   // Pushes a randomly selected king's question into new array.
@@ -96,7 +98,6 @@ const game = {  // Sets up the game including base variables, functions
       const questionIndex = Math.floor(Math.random() * 7);  // This randomly chooses a random kingsInPlay question index
       game.questionsInPlay.push(game.kingsInPlay[randIndex].questions[questionIndex]); // This pushes the randomly chosen question into questionsInPlay array
       game.answersInPlay.push(randIndex);   // This pushes the corresponding answers to the randomly drawn questions to answersInPlay
-
       // if (game.questionsInPlay.includes(game.kingsInPlay[randIndex].questions[questionIndex]) {
       //   // Do nothing
       // } else {
@@ -139,20 +140,20 @@ $("#startButton").click(function ()
 
   $("#button1").click(function ()
   {
-
-      console.log("Button 1 is clicked");
+    console.log("Button 1 is clicked");
   });
 
   $("#button2").click(function ()
   {
-      console.log("Button 2 is clicked");
+    console.log("Button 2 is clicked");
   });
 
   $("#button3").click(function ()
   {
-      console.log("Button 3 is clicked");
+    console.log("Button 3 is clicked");
   });
   game.gameStart()
+        console.log(game.buttonAnswers);
 });
 
 
