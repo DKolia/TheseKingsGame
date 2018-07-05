@@ -106,17 +106,11 @@ const game = {  // Sets up the game including base variables, functions
       // } else {
 
     }
-    $(".introText").empty().append("Q1: " + game.questionsInPlay[0]);
-    $(".introText").empty().append("Q2: " + game.questionsInPlay[1]);
-    $(".introText").empty().append("Q3: " + game.questionsInPlay[2]);
-    $(".introText").empty().append("Q4: " + game.questionsInPlay[3]);
-    $(".introText").empty().append("Q5: " + game.questionsInPlay[4]);
-    console.log("Q1: " + game.questionsInPlay[0]);
-    console.log("Q2: " + game.questionsInPlay[1]);
-    console.log("Q3: " + game.questionsInPlay[2]);
-    console.log("Q4: " + game.questionsInPlay[3]);
-    console.log("Q5: " + game.questionsInPlay[4]);
-    console.log("Answers are: " + game.answersInPlay);
+    $(".introText").empty().append("Q" + [roundNumber] + ": " + game.questionsInPlay[0]);
+    // $(".introText").empty().append("Q2: " + game.questionsInPlay[0]);
+    // $(".introText").empty().append("Q3: " + game.questionsInPlay[2]);
+    // $(".introText").empty().append("Q4: " + game.questionsInPlay[3]);
+    // $(".introText").empty().append("Q5: " + game.questionsInPlay[4]);
   },
 
   //  Checks if user scored a point or not, advances round
@@ -133,7 +127,7 @@ const game = {  // Sets up the game including base variables, functions
     $("#roundDigit").empty().append("Round : " + roundNumber + " out of 5");
     $("#scoreDigit").empty().append("Score : " + userScore + " out of 5");
     if (roundNumber < 6 ) {
-      console.log("Now beginning round " + roundNumber + ".");
+      $(".introText").empty().append("Q" + [roundNumber] + ": " + game.questionsInPlay[roundNumber-1]);
     }
     game.gameEnd();
   },
@@ -145,8 +139,10 @@ const game = {  // Sets up the game including base variables, functions
       $("#roundDigit").empty();
       $("#scoreDigit").empty();
       if (userScore === 5) {
+        $(".introText").empty().append("You've won These Kings with a perfect score of: 5 out of 5!");
         console.log("You've won These Kings with a perfect score of: 5 out of 5!");
       } else {
+        $(".introText").empty().append("You've answered " + userScore + " out of 5 questions correctly. Try again with a new set of These Kings and questions.");
         console.log("You've answered " + userScore + " out of 5 questions correctly. Try again with a new set of These Kings and questions.");
       }
     }
@@ -160,38 +156,22 @@ $("#startButton").click(function ()
   $("button").removeClass("hidden");
   $("#startButton").addClass("hidden");
   $(".scoreCard").removeClass("hidden");
-
-
-
-
-
   $("#button0").click(function (event)
+
   {
-    console.log("Button 0 is clicked; submitting answer King " + game.kingsInPlay[0].name) + ".";
     game.answerSubmitted.push(0);
-    console.log(game.answerSubmitted);
     game.checkScore()
   });
-
-
   $("#button1").click(function (event)
   {
-    console.log("Button 1 is clicked; submitting answer King " + game.kingsInPlay[1].name) + ".";
     game.answerSubmitted.push(1);
-    console.log(game.answerSubmitted);
     game.checkScore()
   });
-
-
   $("#button2").click(function (event)
   {
-    console.log("Button 2 is clicked; submitting answer King " + game.kingsInPlay[2].name) + ".";
     game.answerSubmitted.push(2);
-    console.log(game.answerSubmitted);
     game.checkScore()
   });
-
-
   game.gameStart()
 });
 
@@ -200,10 +180,11 @@ $("#startButton").click(function ()
 
 
 // To do:
-// Push user feedback
-// Compare "submittedAnswers array to answersInPlay array"
-// Determine score
+// Push questions
+// Prevent duplicate questions
 // Finish MVP
 // Add images to buttons
 // Fix up alt sites
+// Add Descriptive commenting
+// Add scoreCard styling
 // Add CSS animations
