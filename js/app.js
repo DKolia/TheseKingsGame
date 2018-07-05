@@ -68,13 +68,11 @@ const game = {  // Sets up the game including base variables, functions
 
   //  Starts the game and runs below functions to set things up
   gameStart() {
-    userScore = 0
     roundNumber = 1
-    console.log("Starting the game!");
-    console.log("The current score is " + userScore);
-    console.log("The current round is " + roundNumber);
+    userScore = 0
     game.randKings();
     game.randQuestions();
+
   },
 
   // This is a function that determines 3 of 4 random, unique kings for play
@@ -101,12 +99,13 @@ const game = {  // Sets up the game including base variables, functions
 
       game.questionsInPlay.push(game.kingsInPlay[randIndex].questions[questionIndex]); // This pushes the randomly chosen question into questionsInPlay array
       game.answersInPlay.push(randIndex);   // This pushes the corresponding answers to the randomly drawn questions to answersInPlay
-      // if (game.questionsInPlay.includes(game.kingsInPlay[randIndex].questions[questionIndex]) {
+      // if (game.questionsInPlay.includes(game.kingsInPlay[randIndex].questions[questionIndex]) {      // This is an attempt to prevent duplicates in the questions array
       //   // Do nothing
       // } else {
 
     }
-    $(".introText").empty().append("Q" + [roundNumber] + ": " + game.questionsInPlay[0]);
+    $(".introText").empty().append("Q" + ["1"] + ": " + game.questionsInPlay[0]);   // These two lines manually set the first round for play
+    $("#roundDigit").empty().append("Round : " + 1 + " out of 5");
     // $(".introText").empty().append("Q2: " + game.questionsInPlay[0]);
     // $(".introText").empty().append("Q3: " + game.questionsInPlay[2]);
     // $(".introText").empty().append("Q4: " + game.questionsInPlay[3]);
@@ -138,6 +137,7 @@ const game = {  // Sets up the game including base variables, functions
     if (roundNumber === 6) {
       $("#roundDigit").empty();
       $("#scoreDigit").empty();
+      $("button").addClass("hidden");
       if (userScore === 5) {
         $(".introText").empty().append("You've won These Kings with a perfect score of: 5 out of 5!");
         console.log("You've won These Kings with a perfect score of: 5 out of 5!");
