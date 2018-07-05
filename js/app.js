@@ -63,6 +63,7 @@ const game = {  // Sets up the game including base variables, functions
   kingsInPlay: [],
   questionsInPlay: [],
   answersInPlay: [],
+  answerSubmitted: [],
   buttonAnswers: [],
 
   //  Starts the game and runs below functions to set things up
@@ -96,6 +97,8 @@ const game = {  // Sets up the game including base variables, functions
     for (let i = 0; i < 5; i++) {  // Makes this function run 5 times
       const randIndex = Math.floor(Math.random() * 3);  // This chooses a random king from array kingsInPlay
       const questionIndex = Math.floor(Math.random() * 7);  // This randomly chooses a random kingsInPlay question index
+
+
       game.questionsInPlay.push(game.kingsInPlay[randIndex].questions[questionIndex]); // This pushes the randomly chosen question into questionsInPlay array
       game.answersInPlay.push(randIndex);   // This pushes the corresponding answers to the randomly drawn questions to answersInPlay
       // if (game.questionsInPlay.includes(game.kingsInPlay[randIndex].questions[questionIndex]) {
@@ -122,6 +125,7 @@ const game = {  // Sets up the game including base variables, functions
     console.log("Congrats! They are the correct King.");
     console.log("Current score: " + userScore);
     roundNumber++
+    $("#roundDigit").empty().append("Round : " + roundNumber + " out of 5");
     if (roundNumber < 6 ) {
       console.log("Now beginning round " + roundNumber + ".");
     }
@@ -146,24 +150,51 @@ $("#startButton").click(function ()
   //  These make the necessary jQuery/CSS changes to play/advance the game
   $("button").removeClass("hidden");
   $("#startButton").addClass("hidden");
+  $(".scoreCard").removeClass("hidden");
 
 
-  $("#button0").click(function ()
+
+
+
+  $("#button0").click(function (event)
   {
     console.log("Button 0 is clicked; submitting answer King " + game.kingsInPlay[0].name) + ".";
+    game.answerSubmitted.push(0);
+    console.log(game.answerSubmitted);
   });
 
 
-  $("#button1").click(function ()
+  $("#button1").click(function (event)
   {
     console.log("Button 1 is clicked; submitting answer King " + game.kingsInPlay[1].name) + ".";
+    game.answerSubmitted.push(1);
+    console.log(game.answerSubmitted);
   });
 
 
-  $("#button2").click(function ()
+  $("#button2").click(function (event)
   {
     console.log("Button 2 is clicked; submitting answer King " + game.kingsInPlay[2].name) + ".";
+    game.answerSubmitted.push(2);
+    console.log(game.answerSubmitted);
   });
+
 
   game.gameStart()
 });
+
+
+
+
+
+// To do:
+// Make Scorecard respond and update
+// Push user feedback
+// Make answersInPlay be an array of name-strings
+// Make buttons push submitted name-string answers into submittedAnswers array
+// Compare "submittedAnswers array to answersInPlay array"
+// Determine score
+// Finish MVP
+// Add images to buttons
+// Fix up alt sites
+// Add CSS animations
