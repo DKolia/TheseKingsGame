@@ -101,7 +101,8 @@ h2 {
 .mainGame {
   width: 60%;
   height: 60%;
-  min-width: 700px;
+  min-width: 800px;
+  max-width: 900px;
   margin: auto;
   animation: fadein 2s;
   display: flex;
@@ -114,6 +115,12 @@ h2 {
 /* Helps hide and reveal elements */
 .hidden {
   display: none;
+}
+
+#roundDigit, #scoreDigit {
+  font-family: futura, sans-serif;
+  font-size: 1.9em;
+  text-decoration: underline;
 }
 
 /* This provides styling for every button on screen */
