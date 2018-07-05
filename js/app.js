@@ -156,35 +156,35 @@ $("#startButton").click(function ()
   $("button").removeClass("hidden");
   $("#startButton").addClass("hidden");
   $(".scoreCard").removeClass("hidden");
-  $("#button0").click(function (event)
 
-  {
+  $("#button0").click(function (event) {
     game.answerSubmitted.push(0);
     game.checkScore()
   });
-  $("#button1").click(function (event)
-  {
+  $("#button1").click(function (event) {
     game.answerSubmitted.push(1);
     game.checkScore()
   });
-  $("#button2").click(function (event)
-  {
+  $("#button2").click(function (event) {
     game.answerSubmitted.push(2);
     game.checkScore()
   });
+
   game.gameStart()
+    $("#button0").empty().append(game.kingsInPlay[0].name);
+    $("#button0").empty().append(game.kingsInPlay[1].name);
+    $("#button0").empty().append(game.kingsInPlay[2].name);
 });
 
 
 
 
-
 // To do:
-// Push questions
+//
 // Prevent duplicate questions
-// Finish MVP
 // Add images to buttons
 // Fix up alt sites
 // Add Descriptive commenting
+// Imrove CSS styling
 // Add scoreCard styling
 // Add CSS animations

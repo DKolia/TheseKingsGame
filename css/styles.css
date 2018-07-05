@@ -1,6 +1,6 @@
 /* This sets up the background image, transparency, and centers. JS randomly loads an image, but keeping this in case JS is disabled or stops working*/
 #backgroundImage {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0, 0.4)), url("../images/backgrounds/Background2.jpg"), center center no-repeat;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../images/backgrounds/Background2.jpg"), center center no-repeat;
   background-size: cover;
   height: 100vh;
   padding: 0;
@@ -92,6 +92,7 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  filter: drop-shadow(0px 0px 8px black);
 }
 
 .hidden {
