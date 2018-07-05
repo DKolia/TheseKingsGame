@@ -135,25 +135,30 @@ const game = {  // Sets up the game including base variables, functions
 //  This start button disappears and makes answer buttons appear when clicked
 $("#startButton").click(function ()
 {
+  //  These make the necessary jQuery/CSS changes to play/advance the game
   $("button").removeClass("hidden");
   $("#startButton").addClass("hidden");
 
+
   $("#button1").click(function ()
   {
-    console.log("Button 1 is clicked");
+    console.log("Button 1 is clicked; submitting answer King " + game.kingsInPlay[0].name) + ".";
   });
+
 
   $("#button2").click(function ()
   {
-    console.log("Button 2 is clicked");
+    console.log("Button 2 is clicked; submitting answer King " + game.kingsInPlay[1].name) + ".";
   });
+
 
   $("#button3").click(function ()
   {
-    console.log("Button 3 is clicked");
+    console.log("Button 3 is clicked; submitting answer King " + game.kingsInPlay[2].name) + ".";
   });
+
   game.gameStart()
-        console.log(game.buttonAnswers);
+  console.log(game.buttonAnswers);
 });
 
 
