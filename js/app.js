@@ -132,5 +132,20 @@ const game = {  // Sets up the game including base variables, functions
 }
 
 
+$("#button1").click(function ()
+{
+    console.log("Button 1 is clicked");
+});
+
+$("#button2").click(function ()
+{
+    console.log("Button 2 is clicked");
+});
+
+$("#button3").click(function ()
+{
+    console.log("Button 3 is clicked");
+});
+
 // if question is from KX === KX from answer-  give points
 // else- no points, advance round.
