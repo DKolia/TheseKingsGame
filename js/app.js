@@ -145,19 +145,19 @@ $("#startButton").click(function ()
 
   $("#button0").click(function ()
   {
-    console.log("Button 1 is clicked; submitting answer King " + game.kingsInPlay[0].name) + ".";
+    console.log("Button 0 is clicked; submitting answer King " + game.kingsInPlay[0].name) + ".";
   });
 
 
   $("#button1").click(function ()
   {
-    console.log("Button 2 is clicked; submitting answer King " + game.kingsInPlay[1].name) + ".";
+    console.log("Button 1 is clicked; submitting answer King " + game.kingsInPlay[1].name) + ".";
   });
 
 
   $("#button2").click(function ()
   {
-    console.log("Button 3 is clicked; submitting answer King " + game.kingsInPlay[2].name) + ".";
+    console.log("Button 2 is clicked; submitting answer King " + game.kingsInPlay[2].name) + ".";
   });
 
   game.gameStart()
