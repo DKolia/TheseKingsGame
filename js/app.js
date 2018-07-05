@@ -172,8 +172,8 @@ $("#startButton").click(function ()
 
   game.gameStart()
     $("#button0").empty().append(game.kingsInPlay[0].name);
-    $("#button0").empty().append(game.kingsInPlay[1].name);
-    $("#button0").empty().append(game.kingsInPlay[2].name);
+    $("#button1").empty().append(game.kingsInPlay[1].name);
+    $("#button2").empty().append(game.kingsInPlay[2].name);
 });
 
 

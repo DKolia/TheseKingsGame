@@ -6,11 +6,10 @@
   padding: 0;
 }
 
-
 /* Sets Navbar to 100%, colors black. Padding from A tags define height */
 nav {
   width: 100%;
-  background-color: rgba(0,0,0,1);
+  background-color: rgba(0,0,0,0.6);
 }
 
 /* sets up flexbox, removes bullet points for nav UL */
@@ -35,20 +34,20 @@ nav a.active {
   text-decoration: underline;
 }
 
+/* This helps with layout of the navbar */
 nav .aImages {
   padding: 15px;
 }
 
-
-/* icon styles */
+/* This is styling for deactivated icons meaning these Era/Age trivia questions are excluded */
 .iconDeactivated {
   width: 55px;
   height: 55px;
   padding: 10px;
   filter: invert(25%);
-
-
 }
+
+/* This is styling for the "activated" icon, meaning this is the Era/Age of the trivia questions */
 .iconActivated {
   width: 55px;
   height: 55px;
@@ -57,11 +56,10 @@ nav .aImages {
 
 }
 
+/* This helps keep the flow of the nav bar from collapsing by calling out the final icon specifically */
 .lastIcon {
   margin-right: auto;
 }
-
-
 
 /* This targets H1 and P tags, centers, and colors in white. Standard bootstrap fonts for now */
 h1, p {
@@ -71,17 +69,35 @@ h1, p {
   width: 100%;
 }
 
+/* P tags recieve some extra size and space */
 p {
   font-size: 1.4em;
   line-height: 1.8em;
 }
 
+/* The main "logo" of the home screen */
 h1 {
+  font-family: futura, sans-serif;
+  font-weight: 300;
   font-size: 6em;
   padding: 50px;
   margin: 0;
 }
 
+/* This is the title font on sub-pages */
+h2 {
+  color: white;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  font-family: futura, sans-serif;
+  font-weight: 300;
+  font-size: 4em;
+  padding: 50px;
+  margin: 0;
+}
+
+/* By and large, this is everything contained between the nav bar and footer bar, provides styling and functionality */
 .mainGame {
   width: 60%;
   height: 60%;
@@ -95,10 +111,12 @@ h1 {
   filter: drop-shadow(0px 0px 8px black);
 }
 
+/* Helps hide and reveal elements */
 .hidden {
   display: none;
 }
 
+/* This provides styling for every button on screen */
 button {
   font-size: 1.3em;
   font-weight: 400;
@@ -111,6 +129,12 @@ button {
   justify-content: center;
 }
 
+/* This styling helps make list of sources legible */
+.mySources {
+  font-size: 1.35em;
+  text-decoration: underline;
+}
+
 /* This adds the bottom footer bar */
 footer {
   padding: 20px;
@@ -119,7 +143,7 @@ footer {
   bottom: 0;
   left: 0;
   font-size: 1.3em;
-  background-color: black;
+  background-color: rgba(0,0,0,1);
   padding-bottom: 20px;
 }
 
@@ -132,7 +156,6 @@ footer {
 .footerText a {
   font-size: 1.2em;
 }
-
 
 /* Animations for loading content with support for almost all browsers */
 @keyframes fadein {
