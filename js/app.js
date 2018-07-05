@@ -152,6 +152,7 @@ $("#startButton").click(function ()
   {
       console.log("Button 3 is clicked");
   });
+  game.gameStart()
 });
 
 

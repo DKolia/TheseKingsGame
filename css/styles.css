@@ -94,6 +94,18 @@ h1 {
 }
 
 
+button {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: white;
+  background-color: transparent;
+  margin: 40px;
+  padding: 7px 30px;
+  border: 1px solid white;
+  align-items: center;
+  justify-content: center;
+}
+
 /* This adds the bottom footer bar */
 footer {
   padding: 20px;
