@@ -103,8 +103,11 @@ const game = {  // Sets up the game including base variables, functions
       // } else {
 
     }
-    console.log(game.questionsInPlay);
     console.log(game.questionsInPlay[0]);
+    console.log(game.questionsInPlay[1]);
+    console.log(game.questionsInPlay[2]);
+    console.log(game.questionsInPlay[3]);
+    console.log(game.questionsInPlay[4]);
     console.log(game.answersInPlay);
   },
 
@@ -140,28 +143,22 @@ $("#startButton").click(function ()
   $("#startButton").addClass("hidden");
 
 
-  $("#button1").click(function ()
+  $("#button0").click(function ()
   {
     console.log("Button 1 is clicked; submitting answer King " + game.kingsInPlay[0].name) + ".";
   });
 
 
-  $("#button2").click(function ()
+  $("#button1").click(function ()
   {
     console.log("Button 2 is clicked; submitting answer King " + game.kingsInPlay[1].name) + ".";
   });
 
 
-  $("#button3").click(function ()
+  $("#button2").click(function ()
   {
     console.log("Button 3 is clicked; submitting answer King " + game.kingsInPlay[2].name) + ".";
   });
 
   game.gameStart()
-  console.log(game.buttonAnswers);
 });
-
-
-
-// if question is from KX === KX from answer-  give points
-// else- no points, advance round.
