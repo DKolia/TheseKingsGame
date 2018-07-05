@@ -121,11 +121,17 @@ const game = {  // Sets up the game including base variables, functions
 
   //  Checks if user scored a point or not, advances round
   checkScore() {
-    userScore++
-    console.log("Congrats! They are the correct King.");
-    console.log("Current score: " + userScore);
+    if (game.answerSubmitted[roundNumber - 1] === game.answersInPlay[roundNumber - 1]) {
+      userScore++
+      console.log("Congrats! They are the correct King.");
+      console.log("Current score: " + userScore);
+    }
+    if (game.answerSubmitted[roundNumber - 1] !== game.answersInPlay[roundNumber - 1]) {
+      console.log("Sorry! That's the wrong King!");
+    }
     roundNumber++
     $("#roundDigit").empty().append("Round : " + roundNumber + " out of 5");
+    $("#scoreDigit").empty().append("Score : " + userScore + " out of 5");
     if (roundNumber < 6 ) {
       console.log("Now beginning round " + roundNumber + ".");
     }
@@ -164,6 +170,7 @@ $("#startButton").click(function ()
     console.log("Button 0 is clicked; submitting answer King " + game.kingsInPlay[0].name) + ".";
     game.answerSubmitted.push(0);
     console.log(game.answerSubmitted);
+    game.checkScore()
   });
 
 
@@ -172,6 +179,7 @@ $("#startButton").click(function ()
     console.log("Button 1 is clicked; submitting answer King " + game.kingsInPlay[1].name) + ".";
     game.answerSubmitted.push(1);
     console.log(game.answerSubmitted);
+    game.checkScore()
   });
 
 
@@ -180,6 +188,7 @@ $("#startButton").click(function ()
     console.log("Button 2 is clicked; submitting answer King " + game.kingsInPlay[2].name) + ".";
     game.answerSubmitted.push(2);
     console.log(game.answerSubmitted);
+    game.checkScore()
   });
 
 
@@ -191,10 +200,7 @@ $("#startButton").click(function ()
 
 
 // To do:
-// Make Scorecard respond and update
 // Push user feedback
-// Make answersInPlay be an array of name-strings
-// Make buttons push submitted name-string answers into submittedAnswers array
 // Compare "submittedAnswers array to answersInPlay array"
 // Determine score
 // Finish MVP
