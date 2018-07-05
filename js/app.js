@@ -88,7 +88,7 @@ const game = {  // Sets up the game including base variables, functions
         game.buttonAnswers.push(this.randIndex);   // This pushes the king's index from kingsInPlay array to separate answer array
       }
     }
-    console.log(game.kingsInPlay[0].name + ", " + game.kingsInPlay[1].name + ", " + game.kingsInPlay[2].name);  // Logs the names of the three Kings chosen
+    console.log("Your Kings are: " + game.kingsInPlay[0].name + ", " + game.kingsInPlay[1].name + ", " + game.kingsInPlay[2].name);  // Logs the names of the three Kings chosen
   },
 
   // Pushes a randomly selected king's question into new array.
@@ -103,12 +103,17 @@ const game = {  // Sets up the game including base variables, functions
       // } else {
 
     }
-    console.log(game.questionsInPlay[0]);
-    console.log(game.questionsInPlay[1]);
-    console.log(game.questionsInPlay[2]);
-    console.log(game.questionsInPlay[3]);
-    console.log(game.questionsInPlay[4]);
-    console.log(game.answersInPlay);
+    $(".introText").empty().append("Q1: " + game.questionsInPlay[0]);
+    $(".introText").empty().append("Q2: " + game.questionsInPlay[1]);
+    $(".introText").empty().append("Q3: " + game.questionsInPlay[2]);
+    $(".introText").empty().append("Q4: " + game.questionsInPlay[3]);
+    $(".introText").empty().append("Q5: " + game.questionsInPlay[4]);
+    console.log("Q1: " + game.questionsInPlay[0]);
+    console.log("Q2: " + game.questionsInPlay[1]);
+    console.log("Q3: " + game.questionsInPlay[2]);
+    console.log("Q4: " + game.questionsInPlay[3]);
+    console.log("Q5: " + game.questionsInPlay[4]);
+    console.log("Answers are: " + game.answersInPlay);
   },
 
   //  Checks if user scored a point or not, advances round

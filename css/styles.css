@@ -84,15 +84,19 @@ h1 {
 
 .mainGame {
   width: 60%;
+  height: 60%;
   min-width: 700px;
   margin: auto;
   animation: fadein 2s;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .hidden {
   display: none;
 }
-
 
 button {
   font-size: 1.3em;
