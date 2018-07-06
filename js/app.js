@@ -186,4 +186,3 @@ $("#startButton").click(function ()
 // Prevent duplicate questions
 // Add Retry button to conclusion
 // Add images to buttons
-// Add scoreCard styling
