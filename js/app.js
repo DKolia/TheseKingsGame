@@ -57,7 +57,7 @@ const k4 = new king("Ashurbanipal", "Neo-Assyrian Era", 4, [
   "Which of These Kings was able to read and write cuneiform tablets, often signing their own name?",
 ]);
 
-const game = {  // Sets up the game including base variables, functions
+const game = {  // Sets up the game including base variables, functions, arrays
   currentKing: null,
   kings: [k1, k2, k3, k4],
   kingsInPlay: [],
@@ -133,8 +133,8 @@ const game = {  // Sets up the game including base variables, functions
 
   //  Checks if user has completed 5 rounds, if they have won the game, or needs to try again
   gameEnd() {
-
     if (roundNumber === 6) {
+      //  Erases scorecard, hides buttons
       $("#roundDigit").empty();
       $("#scoreDigit").empty();
       $("button").addClass("hidden");
@@ -142,8 +142,8 @@ const game = {  // Sets up the game including base variables, functions
         $(".introText").empty().append("You've won These Kings with a perfect score of: 5 out of 5!");
         console.log("You've won These Kings with a perfect score of: 5 out of 5!");
       } else {
+        //  Erases main block of text, provides conclusion
         $(".introText").empty().append("You've answered " + userScore + " out of 5 questions correctly. Try again with a new set of These Kings and questions.");
-        console.log("You've answered " + userScore + " out of 5 questions correctly. Try again with a new set of These Kings and questions.");
       }
     }
   }
@@ -157,6 +157,7 @@ $("#startButton").click(function ()
   $("#startButton").addClass("hidden");
   $(".scoreCard").removeClass("hidden");
 
+  //  These 3 buttons, named after array indexes to make checking answers easier, push the answers to the answerSubmitted array
   $("#button0").click(function (event) {
     game.answerSubmitted.push(0);
     game.checkScore()
@@ -170,7 +171,9 @@ $("#startButton").click(function ()
     game.checkScore()
   });
 
+  //  This starts the game!
   game.gameStart()
+    //  Due to flow, answer buttons best take their answer's name here
     $("#button0").empty().append(game.kingsInPlay[0].name);
     $("#button1").empty().append(game.kingsInPlay[1].name);
     $("#button2").empty().append(game.kingsInPlay[2].name);
@@ -180,11 +183,7 @@ $("#startButton").click(function ()
 
 
 // To do:
-//
 // Prevent duplicate questions
+// Add Retry button to conclusion
 // Add images to buttons
-// Fix up alt sites
-// Add Descriptive commenting
-// Imrove CSS styling
 // Add scoreCard styling
-// Add CSS animations

@@ -97,24 +97,45 @@ h2 {
   margin: 0;
 }
 
-/* By and large, this is everything contained between the nav bar and footer bar, provides styling and functionality */
+/* By and large, this is everything contained between the mainpage nav bar and footer bar, provides styling and functionality */
 .mainGame {
   width: 60%;
-  height: 60%;
+  height: 85%;
   min-width: 800px;
   max-width: 900px;
   margin: auto;
+  padding: 40px;
   animation: fadein 2s;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   filter: drop-shadow(0px 0px 8px black);
+  background-color:rgba(0,0,0,0.3);
+}
+
+.mainGame2 {
+  width: 60%;
+  height: 60%;
+  min-width: 800px;
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+  animation: fadein 2s;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0px 0px 8px black);
+  background-color:rgba(0,0,0,0.3);
 }
 
 /* Helps hide and reveal elements */
 .hidden {
   display: none;
+}
+
+.scoreCard {s
 }
 
 #roundDigit, #scoreDigit {
@@ -140,6 +161,8 @@ button {
 .mySources {
   font-size: 1.35em;
   text-decoration: underline;
+  padding: 40px;
+  background-color:rgba(0,0,0,0.3);
 }
 
 /* This adds the bottom footer bar */
